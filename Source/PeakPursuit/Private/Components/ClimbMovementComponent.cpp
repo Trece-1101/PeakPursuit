@@ -454,7 +454,6 @@ bool UClimbMovementComponent::CanHopDown(FVector& OutHopDownTargetPos)
 void UClimbMovementComponent::RequestHoping()
 {    
     const FVector UnrotatedLastInputVector = UKismetMathLibrary::Quat_UnrotateVector(UpdatedComponent->GetComponentQuat(), GetLastInputVector());
-    //Debug::Print(UnrotatedLastInputVector.GetSafeNormal().ToString(), 1, FColor::Red);
 
     const float DotResult = FVector::DotProduct(UnrotatedLastInputVector.GetSafeNormal(), FVector::UpVector);
 
